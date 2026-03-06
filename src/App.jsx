@@ -46,6 +46,18 @@ function App() {
 
 };
 
+const editTodo = (id, updatedTask) => {
+
+  const updatedTodos = todos.map(todo =>
+    todo.id === id ? { ...todo, task: updatedTask } : todo
+  );
+
+  setTodos(updatedTodos);
+
+  saveTodos(updatedTodos);
+
+};
+
   return (
 
     <div style={{ padding: "30px" }}>
@@ -57,6 +69,12 @@ function App() {
       <TodoList
   todos={todos}
   deleteTodo={deleteTodo}
+/>
+
+<TodoList
+  todos={todos}
+  deleteTodo={deleteTodo}
+  editTodo={editTodo}
 />
 
     </div>
