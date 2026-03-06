@@ -5,7 +5,7 @@ import TodoItem from "./TodoItem";
  Purpose: Render list of todos
 */
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos, deleteTodo, editTodo  }) {
 
   return (
 
@@ -17,6 +17,7 @@ function TodoList({ todos, deleteTodo }) {
           key={todo.id}
           todo={todo}
           deleteTodo={deleteTodo}
+          editTodo={editTodo}
         />
 
       ))}
