@@ -1,17 +1,27 @@
 /* eslint-disable react-hooks/set-state-in-effect */
-import './App.css'
 import { useState, useEffect } from "react";
-import TodoForm from './Components/TodoForm';
-import TodoList from './Components/TodoList';
+import AddTodo from "./Components/AddTodo";
+import TodoItem from "./Components/TodoItem";
+import TodoList from "./Components/TodoList";
 import { getTodos, saveTodos } from "./utils/localStorage";
 
-function App() {
-    const [todos, setTodos] = useState([]);
+/*
+ App Component
+ Responsible for:
+ - Managing todo state
+ - Passing functions to child components
+*/
 
-    useEffect(() => {
+function App() {
+
+  const [todos, setTodos] = useState([]);
+
+  // Load todos on first render
+  useEffect(() => {
     setTodos(getTodos());
   }, []);
 
+  // Add todo logic
   const addTodo = (task) => {
 
     const newTodo = {
@@ -27,18 +37,18 @@ function App() {
   };
 
   return (
-    <>
-      <div style={{padding:"30px"}}>
+
+    <div style={{ padding: "30px" }}>
 
       <h1>Todo App</h1>
 
-      <TodoForm addTodo={addTodo}/>
+      <AddTodo addTodo={addTodo} />
 
-      <TodoList todos={todos}/>
+      <TodoList todos={todos} />
 
     </div>
-    </>
-  )
+
+  );
 }
 
-export default App
+export default App;
