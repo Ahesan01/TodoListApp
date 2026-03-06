@@ -1,13 +1,24 @@
 import TodoItem from "./TodoItem";
 
-function TodoList({ todos }) {
+/*
+ Component: TodoList
+ Purpose: Render list of todos
+*/
+
+function TodoList({ todos, deleteTodo }) {
 
   return (
 
     <ul>
 
       {todos.map(todo => (
-        <TodoItem key={todo.id} todo={todo}/>
+
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          deleteTodo={deleteTodo}
+        />
+
       ))}
 
     </ul>
