@@ -1,8 +1,3 @@
-/*
- Component: EditTodo
- Purpose: Edit existing todo
-*/
-
 function EditTodo({ id, editTodo }) {
 
   const handleEdit = () => {
@@ -12,17 +7,16 @@ function EditTodo({ id, editTodo }) {
     if (!updatedTask) return;
 
     editTodo(id, updatedTask);
-
   };
 
   return (
-
-    <button onClick={handleEdit}>
+    <button
+      className="edit-btn"
+      onClick={handleEdit}
+    >
       Edit
     </button>
-
   );
-
 }
 
 export default EditTodo;

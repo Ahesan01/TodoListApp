@@ -1,11 +1,5 @@
 import { useState } from "react";
 
-/*
- Component: AddTodo
- Purpose: Handle adding new todo tasks
- Receives addTodo function from App via props
-*/
-
 function AddTodo({ addTodo }) {
 
   const [task, setTask] = useState("");
@@ -22,16 +16,17 @@ function AddTodo({ addTodo }) {
   };
 
   return (
+
     <form onSubmit={handleSubmit}>
 
       <input
         type="text"
-        placeholder="Enter task"
+        placeholder="Enter your task..."
         value={task}
         onChange={(e) => setTask(e.target.value)}
       />
 
-      <button>Add</button>
+      <button className="add-btn">Add</button>
 
     </form>
   );

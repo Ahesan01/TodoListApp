@@ -1,20 +1,21 @@
 import DeleteTodo from "./DeleteTodo";
 import EditTodo from "./EditTodo";
-/*
- Component: TodoItem
- Purpose: Display single todo item
-*/
 
-function TodoItem({ todo, deleteTodo, editTodo  }) {
+function TodoItem({ todo, deleteTodo, editTodo }) {
 
   return (
 
-    <li>
+    <li className="todo-item">
 
-      {todo.task}
-<EditTodo id={todo.id} editTodo={editTodo} />
+      <span>{todo.task}</span>
 
-      <DeleteTodo id={todo.id} deleteTodo={deleteTodo} />
+      <div className="todo-buttons">
+
+        <EditTodo id={todo.id} editTodo={editTodo} />
+
+        <DeleteTodo id={todo.id} deleteTodo={deleteTodo} />
+
+      </div>
 
     </li>
 
