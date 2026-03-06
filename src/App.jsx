@@ -66,11 +66,6 @@ const editTodo = (id, updatedTask) => {
 
       <AddTodo addTodo={addTodo} />
 
-      <TodoList
-  todos={todos}
-  deleteTodo={deleteTodo}
-/>
-
 <TodoList
   todos={todos}
   deleteTodo={deleteTodo}
