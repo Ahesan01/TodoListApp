@@ -36,6 +36,16 @@ function App() {
     saveTodos(updatedTodos);
   };
 
+  const deleteTodo = (id) => {
+
+  const updatedTodos = todos.filter(todo => todo.id !== id);
+
+  setTodos(updatedTodos);
+
+  saveTodos(updatedTodos);
+
+};
+
   return (
 
     <div style={{ padding: "30px" }}>
@@ -44,7 +54,10 @@ function App() {
 
       <AddTodo addTodo={addTodo} />
 
-      <TodoList todos={todos} />
+      <TodoList
+  todos={todos}
+  deleteTodo={deleteTodo}
+/>
 
     </div>
 

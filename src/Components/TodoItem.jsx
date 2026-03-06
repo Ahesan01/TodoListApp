@@ -1,3 +1,10 @@
+import DeleteTodo from "./DeleteTodo";
+
+/*
+ Component: TodoItem
+ Purpose: Display single todo item
+*/
+
 function TodoItem({ todo, deleteTodo }) {
 
   return (
@@ -6,9 +13,7 @@ function TodoItem({ todo, deleteTodo }) {
 
       {todo.task}
 
-      <button onClick={() => deleteTodo(todo.id)}>
-        Delete
-      </button>
+      <DeleteTodo id={todo.id} deleteTodo={deleteTodo} />
 
     </li>
 
